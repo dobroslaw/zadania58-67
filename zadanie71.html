@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<title>Prostokąt z gwiazdek</title>
+</head>
+<body>
+<script>
+var a_kow = "Dobrosław"; // przykładowe nazwisko
+var b_kow = "Landowski"; // przykładowe imię
+
+var a = (a_kow.length % 4) + 5; // oblicz a
+var b = (b_kow.length % 6) + 20; // oblicz b
+
+var prostokat = ""; // zmienna przechowująca prostokąt
+
+// dodaj górną krawędź
+for (var i = 0; i < b; i++) {
+  prostokat += "*";
+}
+prostokat += "<br>";
+
+// dodaj środkowe części
+var srodek = "";
+for (var i = 0; i < b - 2; i++) {
+  srodek += "&nbsp;";
+}
+srodek = "*" + srodek + "*<br>";
+
+for (var i = 0; i < a - 2; i++) {
+  prostokat += srodek;
+}
+
+// dodaj dolną krawędź
+for (var i = 0; i < b; i++) {
+  prostokat += "*";
+}
+prostokat += "<br>";
+
+// wyświetl prostokąt
+document.write(prostokat);
+</script>
+</body>
+</html>

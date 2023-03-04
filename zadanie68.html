@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wyświetlanie imienia i nazwiska</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+      function display() {
+        var input = document.getElementById("input").value;
+        var output = document.getElementById("output");
+        var name = "Dobrosław Landowski"; // tu wpisz swoje imię i nazwisko
+        var repeat = (name.length % 4) + 10;
+        var size = (name.length % 3) + 40;
+
+        output.innerHTML = "";
+
+        for (var i = 1; i <= input; i++) {
+          var text;
+          var color;
+
+          if (i % 2 == 0) {
+            text = name.split(" ")[1];
+            color = "blue";
+          } else {
+            text = name.split(" ")[0];
+            color = "green";
+          }
+
+          output.innerHTML += "<span style='font-size:" + size + "px;color:" + color + "'>" + text + "</span><br>";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Wyświetlanie imienia i nazwiska</h1>
+    <label for="input">Wpisz liczbę:</label>
+    <input type="number" id="input"><br><br>
+    <button onclick="display()">Wyświetl</button><br><br>
+    <div id="output"></div>
+  </body>
+</html>

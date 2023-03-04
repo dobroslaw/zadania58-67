@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Parzystość liczby</title>
+	<meta charset="UTF-8">
+	<style>
+		.red { color: red; font-size: 3em; }
+		.silver { color: silver; font-size: 5em; }
+	</style>
+</head>
+<body>
+	<label>Podaj liczbę: <input type="number" id="liczba"></label><br><br>
+	<button onclick="sprawdz()">Sprawdź</button>
+	<p id="wynik"></p>
+
+	<script>
+		function sprawdz() {
+			var liczba = parseInt(document.getElementById("liczba").value);
+
+			if (liczba % 2 == 0) {
+				document.getElementById("wynik").innerHTML = '<span class="red">Liczba jest parzysta</span>';
+			} else {
+				document.getElementById("wynik").innerHTML = '<span class="silver">Liczba jest nieparzysta</span>';
+			}
+		}
+	</script>
+</body>
+</html>

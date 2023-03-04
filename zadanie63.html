@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kolory tekstu</title>
+	<meta charset="UTF-8">
+	<style>
+		body {
+			background-color: white;
+			color: black;
+			font-size: 20px;
+			font-family: Arial, sans-serif;
+		}
+
+		h1 {
+			color: green;
+		}
+
+		.red {
+			color: red;
+			font-size: 7px;
+		}
+
+		.blue {
+			color: blue;
+			font-size: 1px;
+		}
+	</style>
+</head>
+<body>
+	<h1>MENU:</h1>
+	<ol>
+		<li><button onclick="wyborKoloru('czerwony')">1-CZERWONY</button></li>
+		<li><button onclick="wyborKoloru('niebieski')">2-NIEBIESKI</button></li>
+	</ol>
+	<p id="tekst"></p>
+
+	<script>
+		function wyborKoloru(kolor) {
+			var tekst = document.getElementById("tekst");
+
+			if (kolor.toLowerCase() == "czerwony" || kolor == "1") {
+				tekst.innerHTML = "Wczytałeś kolor czerwony";
+				tekst.classList.add("red");
+			} else if (kolor.toLowerCase() == "niebieski" || kolor == "2") {
+				tekst.innerHTML = "Wczytałeś kolor niebieski";
+				tekst.classList.add("blue");
+			} else {
+				tekst.innerHTML = "Niepoprawny wybór koloru";
+			}
+		}
+	</script>
+</body>
+</html>
