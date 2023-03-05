@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Program drukujący liczby i ich pierwiastki</title>
+    <script>
+      function printNumbers() {
+        var dziennik = parseInt(document.getElementById("dziennik").value);
+        var output = "";
+        for (var i = dziennik; i < dziennik + 16; i++) {
+          var pierwiastek_drugi = Math.sqrt(i).toFixed(2);
+          var pierwiastek_czwarty = Math.sqrt(pierwiastek_drugi).toFixed(2);
+          output += "I=" + i + " pierw_2(" + i + ")=" + pierwiastek_drugi + " pierw_4(" + i + ")=" + pierwiastek_czwarty + "<br>";
+          if ((i - dziennik + 1) % 3 == 0) {
+            output += ".................................................................<br>";
+          }
+        }
+        document.getElementById("output").innerHTML = output;
+        confirm("Aby kontynuować, naciśnij dowolny klawisz");
+      }
+    </script>
+  </head>
+  <body>
+    <label for="dziennik">Numer w dzienniku:</label>
+    <input type="text" id="dziennik" name="dziennik"><br><br>
+    <button onclick="printNumbers()">Drukuj liczby i ich pierwiastki</button><br><br>
+    <div id="output"></div>
+  </body>
+</html>
